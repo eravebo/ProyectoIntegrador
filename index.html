@@ -4,97 +4,302 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cowoo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <!-- con este link importamos Bootstrap desde CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- con este link importamos iconos de Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    </head>
+
     <style>
-  .nav-link:hover {
-    background-color: #9eb8a4;
-  }
-  body{
-    background-color: #e6e7e6;
-  }
+    body { font-family: 'Arial', sans-serif;}
+    
+    .barra-navegacion {
+            background:  #000000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    .barra-navegacion a{
+      color: rgb(255, 255, 255);
+    }
 
-
-</style><!--agrega color de fondo al pasar el mouse, no encontre esta funcionalidad con bootstrap, tambien podemos usar estilos css sin tener una hoja aparte-->
-
-</head>
+    .footer {
+            background:  #000000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    .seccion-presentacion-principal {
+      background: linear-gradient(rgba(46, 139, 87, 0.8), rgba(32, 178, 170, 0.8)), 
+      url(img/Fondo_section_principal.jpg);
+      background-size: cover;
+      background-position: center;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      color: white;
+      }
+      .tarjeta-espacio-coworking {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: none;
+      border-radius: 15px;
+      overflow: hidden;
+      }
+     .tarjeta-espacio-coworking:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      }
+    </style>
+    
 <body>
-    <nav class="navbar navbar-expand-lg justify-content-end m-0 p-2" style="background-color: rgb(81, 109, 74);"> <!--cambia el color del backgorund del menu-->
-     <div class="container-fluid"> <!--hace que el menu este en una linea seguida-->
-    <a class="navbar-brand" href="#principal"><img src="img/logo.png" alt="logo Cowoo"></a>
-    <ul class="nav nav-pills">
-  <li class="nav-item">
-    <a class="nav-link text-white" aria-current="page" href="#">Quiénes somos</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link text-white" href="#">Nuestras Oficinas</a>
-  </li>
-    <li class="nav-item">
-    <a class="nav-link text-white" href="#">Contactanos</a>
-  </li>
-    <li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle text-white" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Inicia Sesión</a>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item text-black" href="#">Soy Usuario</a></li>
-  </li>
-       <li><a class="dropdown-item text-black" href="#">Soy Coworking</a></li>
-  </li>
-</ul>
-</div>
-</nav>
-
-<section id="principal">
-<div class="text-start m-1 p-4"> <!--crea dos columnas-->
-  <div class="row align-items-start">
-    <div class="col-sm-5 col-md-6">
-        <h1>Encuentra, reserva y trabaja desde <br> el mejor coworking en Medellín</h1>
-        <p>Conecta con espacios flexibles, cómodos y productivos.</p>
-        <div id="infoinicial">
-            <br>
-        <ul class="list-unstyled mt-3"><h3>
-            <li class="mb-2"><i class="bi bi-wifi me-2 text-success"></i>🌐 Wi-Fi de alta velocidad</li>
-            <li class="mb-2"><i class="bi bi-cup-hot me-2 text-success"></i>☕ Café ilimitado</li>
-            <li class="mb-2"><i class="bi bi-people me-2 text-success"></i>👥 Networking con otros profesionales</li>
-            <li class="mb-2"><i class="bi bi-clock-history me-2 text-success"></i>🕓 Acceso 24/7</li>
-        <ul class="list-unstyled mt-3"><h3>
-            <li class="mb-2"><i class="bi bi-easel2 me-2 text-success"></i>🎯 Salas de reuniones equipadas</li>
-        </ul>
-        <br>
+    <nav class="navbar navbar-expand-lg navbar-dark barra-navegacion">
+        <div class="container">
+            <!-- Logo COWOO -->
+            <a class="navbar-brand fw-bold fs-3" href="#">
+              <img src="img/logo.png" alt="logo cowoo">
+            </a>
+            
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Menú de navegación -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#espacios">Nuestros espacios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sobre-nosotros">Sobre Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <button class="btn btn-outline-light ms-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="bi bi-person"></i> Iniciar Sesión
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </div>
-</div>
-<div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0">
-        <div class="input-group m-0 p-2">
-      <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg></span> <!--agrega la lupita del buscador-->
-      <input type="text" class="form-control" placeholder="Busca por ubicación Ejem. Laureles" aria-label="Username" aria-describedby="basic-addon1">
-    </div>
-    <div class="input-group m-0 p-2">
-      <span class="input-group-text" id="basic-addon1"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/></svg></span> <!--agrega la lupita del buscador-->
-      <input type="text" class="form-control" placeholder="Busca por espacio Ejm: Oficina Privada" aria-label="Username" aria-describedby="basic-addon1">
-    </div>
-         <div class="bg-light p-4 rounded shadow mt-4 mx-auto" style="max-width: 480px;"><div class="bg-light p-4" style="max-width: 480px; width: 100%;">
-    <h4 class="mb-4 text-center">Reserva tu espacio Cowoo 💻</h4>
-    <form>
-      <div class="mb-3">
-        <label for="fechaIngreso" class="form-label">Fecha de ingreso</label>
-        <input type="date" class="form-control" id="fechaIngreso" required>
-      </div>
-      <div class="mb-3">
-        <label for="fechaSalida" class="form-label">Fecha de salida</label>
-        <input type="date" class="form-control" id="fechaSalida" required>
-      </div>
-      <div class="d-grid">
-        <button type="submit" class="btn btn-success">Reservar</button>
-      </div>
-    </form>
-  </div>
-</div>
-  </div>
- 
-    </div>
-    
-</div>
-  
-</section>
-    
+    </nav>
+
+
+    <section id="inicio" class="seccion-presentacion-principal">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-4">
+                        Encuentra el Espacio de Coworking Perfecto en Medellín
+                    </h1>
+                    <p class="lead mb-4">
+                        Reserva escritorios, salas de reuniones y espacios colaborativos en los mejores hoteles y restaurantes de la ciudad. Todo en un solo lugar.
+                    </p>
+                    <a href="#buscar" class="btn boton-principal-personalizado btn-lg me-3">
+                        <i class="bi bi-search"></i> Buscar Espacios
+                    </a>
+                    <button class="btn btn-outline-light btn-lg" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Únete Ahora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="buscar" class="py-5">
+        <div class="container">
+            <div class="caja-formulario-busqueda">
+                <h3 class="text-center mb-4">¿Qué tipo de espacio necesitas?</h3>
+                <form>
+                    <div class="row g-3">
+                        <!-- Ubicación -->
+                        <div class="col-md-3">
+                            <label class="form-label">Ubicación</label>
+                            <select class="form-select">
+                                <option selected>El Poblado</option>
+                                <option>Laureles</option>
+                                <option>Envigado</option>
+                                <option>Centro</option>
+                                <option>Sabaneta</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Tipo de espacio -->
+                        <div class="col-md-3">
+                            <label class="form-label">Tipo de Espacio</label>
+                            <select class="form-select">
+                                <option selected>Escritorio Individual</option>
+                                <option>Sala de Reuniones</option>
+                                <option>Espacio Colaborativo</option>
+                                <option>Oficina Privada</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Fecha -->
+                        <div class="col-md-3">
+                            <label class="form-label">Fecha</label>
+                            <input type="date" class="form-control" value="2024-06-20">
+                        </div>
+                        
+                        <!-- Duración -->
+                        <div class="col-md-3">
+                            <label class="form-label">Duración</label>
+                            <select class="form-select">
+                                <option>2 horas</option>
+                                <option>4 horas</option>
+                                <option selected>Día completo</option>
+                                <option>Semanal</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-4">
+                        <button type="button" class="btn boton-principal-personalizado btn-lg" onclick="buscarEspacios()">
+                            <i class="bi bi-search"></i> Buscar Espacios Disponibles
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!--tarjetas de espacios-->
+    <section id="espacios" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5">Espacios Destacados</h2>
+            
+            <div class="row g-4">
+                <!-- Espacio 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card tarjeta-espacio-coworking h-100">
+                        <div class="position-relative">
+                            <div class="position-relative" style="height: 200px; background-image: url('img/Fondo_tajeta_1.jpg'); background-size: cover; background-position: center;"><span class="badge bg-success position-absolute top-0 end-0 m-2">Disponible</span>
+                            </div>
+                            <span class="badge bg-success position-absolute top-0 end-0 m-2">Disponible</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Hotel Intercontinental - Escritorio VIP</h5>
+                            <p class="card-text">
+                                <i class="bi bi-geo-alt text-muted"></i> El Poblado<br>
+                                <small class="text-muted">WiFi ultra rápido, café ilimitado, vista panorámica</small>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="precio-destacado">$25.000/día</span>
+                                <button class="btn boton-borde-personalizado btn-sm" onclick="reservarEspacio('Hotel Intercontinental')">>
+                                    Reservar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Espacio 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card tarjeta-espacio-coworking h-100">
+                        <div class="position-relative">
+                          <div class="position-relative" style="height: 200px; background-image: url('img/Fondo_tarjeta_2.jpg'); background-size: cover; background-position: center;"><span class="badge bg-warning position-absolute top-0 end-0 m-2">Pocos lugares</span></div>
+                            <span class="badge bg-warning position-absolute top-0 end-0 m-2">Pocos lugares</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Restaurante Mondongo's - Sala Colaborativa</h5>
+                            <p class="card-text">
+                                <i class="bi bi-geo-alt text-muted"></i> Laureles<br>
+                                <small class="text-muted">Espacio para 8 personas, proyector incluido</small>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="precio-destacado">$45.000/día</span>
+                                <button class="btn boton-borde-personalizado btn-sm" onclick="reservarEspacio('Mondongo\'s')">>
+                                    Reservar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Espacio 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card tarjeta-espacio-coworking h-100">
+                        <div class="position-relative">
+                            <div class="position-relative" style="height: 200px; background-image: url('img/Fondo_tarjeta_3.jpg'); background-size: cover; background-position: center;"><span class="badge bg-success position-absolute top-0 end-0 m-2">Disponible</span>
+                            </div>
+                            <span class="badge bg-success position-absolute top-0 end-0 m-2">Disponible</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Hotel Dann Carlton - Oficina Privada</h5>
+                            <p class="card-text">
+                                <i class="bi bi-geo-alt text-muted"></i> Centro<br>
+                                <small class="text-muted">Oficina privada para 4 personas, aire acondicionado</small>
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="precio-destacado">$80.000/día</span>
+                                <button class="btn boton-borde-personalizado btn-sm" onclick="reservarEspacio('Hotel Dann Carlton')">>
+                                    Reservar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5">
+                <button class="btn boton-principal-personalizado" onclick="verMasEspacios()">
+                    Ver Más Espacios <i class="bi bi-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><img src="img/logo.png" alt="logo cowoo" width=90px height=25px></h5>
+                    <p class="text-light">La plataforma líder para reservar espacios de coworking en Medellín.</p>
+                    <div>
+                        <a href="#" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Espacios</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">El Poblado</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Laureles</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Centro</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Envigado</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h6>Servicios</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Escritorios</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Salas</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Oficinas</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Eventos</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h6>Contacto</h6>
+                    <p class="text-light mb-1">
+                        <i class="bi bi-envelope"></i> info@COWOO.com
+                    </p>
+                    <p class="text-light mb-1">
+                        <i class="bi bi-phone"></i> +57 4 555-0123
+                    </p>
+                    <p class="text-light">
+                        <i class="bi bi-geo-alt"></i> Medellín, Antioquia
+                    </p>
+
+                     <p class="text-light">
+                        <i class="bi bi-geo-alt"></i> Created BY ANDRES QUINTERO Y EVELYN RAVE
+                    </p>
+                </div>
+            </div>
+            <hr class="text-light">
+            <div class="text-center">
+                <p class="text-light mb-0">&copy; 2024 MedellínWork. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
