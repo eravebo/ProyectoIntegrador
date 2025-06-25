@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/Proyecto Integrador/images/icon.png" type="image/x-icon" />
+  <title>Reservas</title>
+
+  <!-- Bootstrap y estilos Cowoo -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+  <style>
+    body { font-family: 'Arial', sans-serif; }
+
+    .barra-navegacion {
+      height: 60px;
+      background-color: #212529;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .barra-navegacion a {
+      color: white;
+    }
+
+    header img {
+      max-height: 80px;
+    }
+
+    .footer {
+      background: #000000;
+    }
+  </style>
+</head>
+
+<body class="bg-light">
+
+  <!-- Barra de navegación Cowoo -->
+  <nav class="navbar navbar-expand-lg navbar-dark barra-navegacion">
+    <div class="container">
+      <a class="navbar-brand fw-bold fs-3" href="#">
+        <img src="/img/logo.png" alt="logo cowoo" class="img-fluid" style="height: 40px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Espacios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+          <li class="nav-item">
+            <button class="btn btn-outline-success ms-2" data-bs-toggle="modal" data-bs-target="#loginModal">
+              <i class="bi bi-person"></i> Iniciar Sesión
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="text-center py-1 bg-white shadow-sm">
+    <figure>
+      <img src="/img/logo.png" alt="logo cowoo" class="img-fluid mb-3" style="max-height: 100px;">
+    </figure>
+    <h1 class="fw-bold text-dark" >Reservas Co-working</h1>
+    <p class="text-muted">Por favor ingrese los siguientes datos para gestionar su reserva</p>
+  </header>
+
+  <section class="container my-5">
+    <h4 class="text-center mb-4">Formulario de Registro</h4>
+    <form action="success.html" method="get" autocomplete="on" class="row g-3">
+
+      <div class="col-md-6">
+        <label for="nombre" class="form-label">Nombre completo:</label>
+        <input type="text" class="form-control" id="nombre" name="nombre_usuario" required maxlength="50" placeholder="Ingrese su nombre" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="identificacion" class="form-label">Tipo de Identificación:</label>
+        <select class="form-select" id="identificacion" name="identificacion" required>
+          <option value="">Seleccione</option>
+          <option value="cedula_ciudadania">Cédula de Ciudadanía</option>
+          <option value="pasaporte">Pasaporte</option>
+          <option value="ppt">Permiso por protección temporal</option>
+          <option value="cedula_extranjeria">Cédula de Extranjería</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label for="numero_identificacion" class="form-label">Número de Identificación:</label>
+        <input type="text" class="form-control" id="numero_identificacion" name="numero_identificacion" required maxlength="15" placeholder="Letras y números" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="celular" class="form-label">Celular:</label>
+        <input type="tel" class="form-control" id="celular" name="celular" required maxlength="10" placeholder="Sin código de país" />
+      </div>
+
+      <div class="col-md-6">
+        <label for="pais" class="form-label">País:</label>
+        <select class="form-select" id="pais" name="pais" required>
+          <option value="93">Afganistán (+93)</option>
+          <option value="355">Albania (+355)</option>
+          <option value="376">Andorra (+376)</option>
+          <option value="244">Angola (+244)</option>
+          <option value="54">Argentina (+54)</option>
+          <option value="374">Armenia (+374)</option>
+          <option value="61">Australia (+61)</option>
+          <option value="43">Austria (+43)</option>
+          <option value="994">Azerbaiyán (+994)</option>
+          <option value="973">Baréin (+973)</option>
+          <option value="880">Bangladés (+880)</option>
+          <option value="32">Bélgica (+32)</option>
+          <option value="55">Brasil (+55)</option>
+          <option value="1">Canadá (+1)</option>
+          <option value="56">Chile (+56)</option>
+          <option value="86">China (+86)</option>
+          <option value="57">Colombia (+57)</option>
+          <option value="53">Cuba (+53)</option>
+          <option value="20">Egipto (+20)</option>
+          <option value="503">El Salvador (+503)</option>
+          <option value="34">España (+34)</option>
+          <option value="33">Francia (+33)</option>
+          <option value="49">Alemania (+49)</option>
+          <option value="44">Reino Unido (+44)</option>
+          <option value="91">India (+91)</option>
+          <option value="62">Indonesia (+62)</option>
+          <option value="98">Irán (+98)</option>
+          <option value="964">Irak (+964)</option>
+          <option value="353">Irlanda (+353)</option>
+          <option value="972">Israel (+972)</option>
+          <option value="39">Italia (+39)</option>
+          <option value="81">Japón (+81)</option>
+          <option value="962">Jordania (+962)</option>
+          <option value="7">Kazajistán (+7)</option>
+          <option value="254">Kenia (+254)</option>
+          <option value="965">Kuwait (+965)</option>
+          <option value="856">Laos (+856)</option>
+          <option value="961">Líbano (+961)</option>
+          <option value="218">Libia (+218)</option>
+          <option value="52">México (+52)</option>
+          <option value="95">Myanmar (+95)</option>
+          <option value="31">Países Bajos (+31)</option>
+          <option value="64">Nueva Zelanda (+64)</option>
+          <option value="234">Nigeria (+234)</option>
+          <option value="850">Corea del Norte (+850)</option>
+          <option value="47">Noruega (+47)</option>
+          <option value="92">Pakistán (+92)</option>
+          <option value="507">Panamá (+507)</option>
+          <option value="595">Paraguay (+595)</option>
+          <option value="51">Perú (+51)</option>
+          <option value="63">Filipinas (+63)</option>
+          <option value="48">Polonia (+48)</option>
+          <option value="351">Portugal (+351)</option>
+          <option value="7">Rusia (+7)</option>
+          <option value="966">Arabia Saudita (+966)</option>
+          <option value="27">Sudáfrica (+27)</option>
+          <option value="82">Corea del Sur (+82)</option>
+          <option value="94">Sri Lanka (+94)</option>
+          <option value="46">Suecia (+46)</option>
+          <option value="41">Suiza (+41)</option>
+          <option value="886">Taiwán (+886)</option>
+          <option value="66">Tailandia (+66)</option>
+          <option value="90">Turquía (+90)</option>
+          <option value="380">Ucrania (+380)</option>
+          <option value="971">Emiratos Árabes Unidos (+971)</option>
+          <option value="44">Reino Unido (+44)</option>
+          <option value="1">Estados Unidos (+1)</option>
+          <option value="598">Uruguay (+598)</option>
+          <option value="58">Venezuela (+58)</option>
+          <option value="84">Vietnam (+84)</option>
+          <option value="263">Zimbabue (+263)</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label for="email" class="form-label">Correo:</label>
+        <input type="email" class="form-control" id="email" name="email" maxlength="50" required placeholder="Ingrese su correo" />
+      </div>
+
+      <div class="col-md-12">
+        <label for="direccion" class="form-label">Dirección de residencia:</label>
+        <input type="text" class="form-control" id="direccion" name="direccion" maxlength="50" required />
+      </div>
+
+      <div class="col-md-12">
+        <label for="comentarios" class="form-label">Comentarios:</label>
+        <textarea class="form-control" id="comentarios" name="comentarios" rows="4" placeholder="Escriba aquí sus comentarios"></textarea>
+      </div>
+
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="politicas" name="politicas" value="si" required />
+          <label class="form-check-label" for="politicas">
+            Acepto las políticas y reglas del co-working
+          </label>
+        </div>
+      </div>
+
+      <div class="col-12 text-center mt-3">
+        <button type="submit" class="btn btn-outline-success btn-lg">
+          <i class="bi bi-send-fill me-1"></i> Enviar
+        </button>
+      </div>
+    </form>
+  </section>
+
+  <footer class="footer bg-dark text-white pt-4 pb-3">
+    <div class="container text-center">
+      <p class="mb-1">&copy; 2025 MedellínWork. Todos los derechos reservados.</p>
+      <p class="mb-0"><i class="bi bi-person me-2"></i>Created by Andrés Quintero y Evelyn Rave</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
